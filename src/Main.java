@@ -37,7 +37,7 @@ public class Main {
         do {
             System.out.print("Digite a opção desejada: ");
             servicoEscolhido = entrada.nextInt();
-            escolheServico(servicoEscolhido, cliente1, servico1);
+            escolheServico(servicoEscolhido, servico1);
 
         } while (servicoEscolhido < 1 || servicoEscolhido > 6);
 
@@ -48,10 +48,10 @@ public class Main {
 
     //menu de identificação:
     public static void menuIdentificacao(){
-        System.out.println("Identifique-se:");
+        System.out.println("Identifique-se:\n");
         System.out.println("1 - Morador local.");
         System.out.println("2 - Estudante.");
-        System.out.println("3 - Turista.");
+        System.out.println("3 - Turista.\n");
 
     }
 
@@ -63,7 +63,7 @@ public class Main {
         System.out.println("3 - Banho de Argila Detox (20 min.)............R$ 45,00");
         System.out.println("4 - Quick Massagem (15 min.)...................R$ 50,00");
         System.out.println("5 - Massagem c/ pedras quentes (50 min.).......R$ 90,00");
-        System.out.println("6 - Limpeza de pele (90 min.)..................R$ 100,00");
+        System.out.println("6 - Limpeza de pele (90 min.)..................R$ 100,00\n");
     }
 
     //identificação do cliente:
@@ -74,7 +74,6 @@ public class Main {
                 System.out.println("-----------------------------------------------");
                 System.out.println("Você tem desconto em nossos serviços!Aproveite!");
                 System.out.println("-----------------------------------------------\n\n");
-                cliente1.setTipo(1);
                 cliente1.setDescricao("Morador local");
                 cliente1.setTemDesconto(true);
             }
@@ -83,13 +82,11 @@ public class Main {
                 System.out.println("-----------------------------------------------");
                 System.out.println("Você tem desconto em nossos serviços!Aproveite!");
                 System.out.println("-----------------------------------------------\n\n");
-                cliente1.setTipo(2);
                 cliente1.setDescricao("Estudante");
                 cliente1.setTemDesconto(true);
             }
             case 3 -> {
                 System.out.println("3 - Turista\n");
-                cliente1.setTipo(3);
                 cliente1.setDescricao("Turista");
                 cliente1.setTemDesconto(false);
             }
@@ -98,33 +95,39 @@ public class Main {
     }
 
     //identificação do serviço escolhido:
-    public static void escolheServico(int servicoEscolhido, Cliente cliente1, Servicos servico1){
+    public static void escolheServico(int servicoEscolhido, Servicos servico1){
         //atribui nome do serviço
         //atribui preço do serviço
         switch (servicoEscolhido) {
             case 1 -> {
                 servico1.setNome("Banho de imersão (20 min.)");
+                System.out.println(servico1.getNome());
                 servico1.setPreco(30);
             }
             case 2 -> {
                 servico1.setNome("Banho de Aromaterapêutico (20 min.)");
+                System.out.println(servico1.getNome());
                 servico1.setPreco(40);
 
             }
             case 3 -> {
                 servico1.setNome("Banho de Argila Detox (20 min.)");
+                System.out.println(servico1.getNome());
                 servico1.setPreco(45);
             }
             case 4 -> {
                 servico1.setNome("Quick Massagem (15 min.)");
+                System.out.println(servico1.getNome());
                 servico1.setPreco(50);
             }
             case 5 -> {
                 servico1.setNome("Massagem c/ pedras quentes (50 min.)");
+                System.out.println(servico1.getNome());
                 servico1.setPreco(90);
             }
             case 6 -> {
                 servico1.setNome("Limpeza de pele (90 min.)");
+                System.out.println(servico1.getNome());
                 servico1.setPreco(100);
             }
             default -> {
